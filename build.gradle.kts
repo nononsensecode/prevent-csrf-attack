@@ -24,4 +24,10 @@ dependencies {
     implementation("org.springframework.boot:spring-boot-starter-web")
     implementation("org.springframework.boot:spring-boot-starter-security")
     implementation("org.springframework.boot:spring-boot-starter-thymeleaf")
+
+    implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
+    // Logging
+    implementation("ch.qos.logback:logback-classic")
+    implementation("org.codehaus.groovy:groovy:3.0.3")
+    implementation("io.github.microutils:kotlin-logging:1.6.25")
 }

@@ -37,11 +37,12 @@ class WebSecurityConfig: WebSecurityConfigurerAdapter() {
 
     override fun configure(http: HttpSecurity?) {
         http
+            ?.csrf()?.disable()
             ?.authorizeRequests()
-            ?.antMatchers("/hello-world")
+            ?.antMatchers("/")
                 ?.permitAll()
-            ?.antMatchers("/another-hello-world")
-                ?.hasRole("ADMIN")
+            ?.antMatchers("/transfer", "/transfer2")
+                ?.hasAnyRole("USER", "ADMIN")
             ?.anyRequest()
                 ?.authenticated()
             ?.and()
